@@ -1,0 +1,32 @@
+<div ng-controller="SignInController">
+
+	<!-- User Signs In -->
+	<h1 ng-repeat="i in loginUser">Hello {{ i }}</h1>
+	<input type="hidden" id="name" ng-value="newTopic.user_name=loginUser[0]" >
+	
+	<!-- Display the Appointments -->
+
+
+	<table class="table">
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Patient Name</th>
+			<th>Complain</th>
+		</tr>
+
+	
+		<tr ng-repeat="x in allAppoints">
+	<div ng-repeat="y in loginUser" ng-if="y == x.name">
+			<td>{{ x.date }}</td>
+			<td>{{ x.time }}</td>
+			<td>{{ x.name }}</td>
+			<td>{{ x.complain }}</td>
+		</tr>
+		</div>
+	</table>
+	
+
+	<a ng-click="makeAppoints()">Make a appointment</a>
+
+</div>

@@ -1,0 +1,45 @@
+<div ng-controller="AppointController">
+
+	<h1>New Appointment</h1>
+	<h1 ng-repeat="i in loginUser">Hello {{ i }}, please make a appointment</h1>
+	<input type="hidden" id="name" ng-value="newAppointment.name=loginUser[0]" >
+
+<form name="form" novalidate>
+		<!-- Select a date -->
+		<h3>Select a Date:</h3>
+		<select ng-model="newAppointment.date">
+			<option value="March 25 2017">March 25 2017</option>
+			<option value="March 26 2017">March 26 2017</option>
+			<option value="March 27 2017">March 27 2017</option>
+			<option value="March 28 2017">March 28 2017</option>
+		</select>
+
+		<!-- Select a date -->
+		<h3>Select a Date:</h3>
+		<select ng-model="newAppointment.time">
+			<option value="8:00 AM">8:00 AM</option>
+			<option value="9:00 AM">9:00 AM</option>
+			<option value="10:00 AM">10:00 AM</option>
+			<option value="11:00 AM">11:00 AM</option>
+			<option value="12:00 AM">12:00 AM</option>
+			<option value="1:00 PM">1:00 PM</option>
+			<option value="2:00 PM">2:00 PM</option>
+			<option value="3:00 PM">3:00 PM</option>
+			<option value="4:00 PM">4:00 PM</option>
+			<option value="5:00 PM">5:00 PM</option>
+		</select><br>
+	
+		<!-- Make a complaint -->
+		<h3>Make a complain:</h3>
+		<textarea name="textarea" rows="4" cols="50" ng-model="newAppointment.complain"></textarea>
+
+		<!-- Cancel (go back to appointment) -->
+		<a ng-click="goBacktoAppointment()">Cancel</a>
+
+		<!-- Click to enter new appointment -->
+		<input type="submit" value="Submit" ng-click="addAppoints()">
+
+
+</form>
+
+</div>
